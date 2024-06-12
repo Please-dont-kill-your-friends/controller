@@ -18,8 +18,6 @@ func handle_message(message: String):
 	var data: Dictionary = JSON.parse_string(message)
 	var type: MessageType = int(data["type"])
 	
-	print("Empfangen: " + message)
-	
 	match type:
 		MessageType.Id:
 			_handle_id_msg(data)
@@ -45,8 +43,6 @@ func _build_message(type: MessageType, payload: Dictionary = {}, id: int = -1) -
 # Send Message
 func _send_message(message: String):
 	WebSocketConnection.socket.send_text(message)
-	
-	print("Gesendet:  " + message)
 	pass
 
 # Handle each type of message the game can receive

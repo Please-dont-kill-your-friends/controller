@@ -16,7 +16,7 @@ func _process(_delta):
 	# print(rtc_mtp.get_connection_status())
 	pass
 
-func create_peer():
+func start_connection():
 	var peer: WebRTCPeerConnection = WebRTCPeerConnection.new()
 	
 	peer.initialize({
