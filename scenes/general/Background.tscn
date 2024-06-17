@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://8pdy18m151dd"]
+
+[ext_resource type="Shader" path="res://shader/scroll_right.gdshader" id="1_5nbah"]
+[ext_resource type="Texture2D" uid="uid://xkjq5n2hqoe2" path="res://images/scroll_tile.png" id="2_8ua45"]
+[ext_resource type="Script" path="res://scripts/ui/lobby/UIBackground.gd" id="3_dpa24"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_40fl5"]
+shader = ExtResource("1_5nbah")
+
+[node name="Background" type="TextureRect"]
+modulate = Color(0.234375, 0.234375, 0.234375, 1)
+z_index = -100
+material = SubResource("ShaderMaterial_40fl5")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -478.0
+offset_top = -204.0
+offset_right = 2522.0
+offset_bottom = 1230.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_8ua45")
+expand_mode = 1
+stretch_mode = 1
+script = ExtResource("3_dpa24")

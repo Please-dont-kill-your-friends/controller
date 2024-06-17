@@ -1,12 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://v15erp3gu8j8"]
+[gd_scene load_steps=3 format=3 uid="uid://v15erp3gu8j8"]
 
 [ext_resource type="Script" path="res://scripts/ui/lobby/UILobby.gd" id="1_8ypr7"]
-[ext_resource type="Shader" path="res://shader/scroll_right.gdshader" id="2_fnuue"]
-[ext_resource type="Texture2D" uid="uid://xkjq5n2hqoe2" path="res://images/scroll_tile.png" id="3_yg60x"]
-[ext_resource type="Script" path="res://scripts/ui/lobby/UIBackground.gd" id="4_knh72"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_40fl5"]
-shader = ExtResource("2_fnuue")
+[ext_resource type="PackedScene" uid="uid://8pdy18m151dd" path="res://scenes/general/Background.tscn" id="2_eetpj"]
 
 [node name="Lobby" type="Control"]
 layout_mode = 3
@@ -17,21 +12,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8ypr7")
 
-[node name="Background" type="TextureRect" parent="."]
-modulate = Color(0.234375, 0.234375, 0.234375, 1)
-material = SubResource("ShaderMaterial_40fl5")
+[node name="Background" parent="." instance=ExtResource("2_eetpj")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -422.0
-offset_top = -183.0
-offset_right = 2578.0
-offset_bottom = 1251.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_yg60x")
-expand_mode = 1
-stretch_mode = 1
-script = ExtResource("4_knh72")
+offset_left = -180.0
+offset_top = -97.0
+offset_right = 1658.0
+offset_bottom = 991.0

@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://bb8pfk5vwtpy5"]
+
+[ext_resource type="PackedScene" uid="uid://db5yppqfugt6o" path="res://scenes/controller/Joystick.tscn" id="1_35wyr"]
+[ext_resource type="PackedScene" uid="uid://8pdy18m151dd" path="res://scenes/general/Background.tscn" id="1_wugeh"]
+[ext_resource type="PackedScene" uid="uid://531qdl1f2rou" path="res://scenes/controller/FireButton.tscn" id="3_4ow12"]
+
+[node name="JoystickController" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" parent="." instance=ExtResource("1_wugeh")]
+layout_mode = 1
+offset_left = -299.0
+offset_top = -118.0
+offset_right = 1839.0
+offset_bottom = 1020.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -157.5
+offset_bottom = 157.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 200
+alignment = 1
+
+[node name="Joystick" parent="HBoxContainer" instance=ExtResource("1_35wyr")]
+layout_mode = 2
+
+[node name="FireButton" parent="HBoxContainer" instance=ExtResource("3_4ow12")]
+layout_mode = 2

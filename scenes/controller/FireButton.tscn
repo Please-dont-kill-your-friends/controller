@@ -1,0 +1,97 @@
+[gd_scene load_steps=8 format=3 uid="uid://531qdl1f2rou"]
+
+[ext_resource type="Texture2D" uid="uid://dt16ymdt1hyjm" path="res://images/icons/shooting.png" id="1_ionee"]
+[ext_resource type="Script" path="res://scripts/ui/controller/UIFireButton.gd" id="1_ut2am"]
+[ext_resource type="Texture2D" uid="uid://b5g2pjfs5to42" path="res://images/icons/shooting_shadow.png" id="1_xmr4n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_am80w"]
+bg_color = Color(0, 0, 0, 0.0862745)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(0, 0, 0, 0.152941)
+shadow_size = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ccfr"]
+bg_color = Color(0, 0, 0, 0.235294)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(0, 0, 0, 0.152941)
+shadow_size = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spi3d"]
+bg_color = Color(0, 0, 0, 0.0862745)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.527344, 0.527344, 0.527344, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(0, 0, 0, 0.152941)
+shadow_size = 40
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xjpaa"]
+
+[node name="FireButton" type="Control"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 3
+anchor_left = -0.13
+anchor_top = -0.231
+anchor_right = 0.13
+anchor_bottom = 0.231
+offset_left = -0.23999
+offset_top = -0.311996
+offset_right = 0.23999
+offset_bottom = 0.311996
+pivot_offset = Vector2(150, 150)
+script = ExtResource("1_ut2am")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_am80w")
+theme_override_styles/hover = SubResource("StyleBoxFlat_am80w")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2ccfr")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_spi3d")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xjpaa")
+action_mode = 0
+
+[node name="ShootingShadow" type="Sprite2D" parent="Button"]
+position = Vector2(150, 150)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_xmr4n")
+
+[node name="Shooting" type="Sprite2D" parent="Button"]
+position = Vector2(150, 150)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_ionee")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

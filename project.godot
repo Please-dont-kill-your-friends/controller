@@ -14,12 +14,12 @@ config/name="Please don't kill your freinds - Controller"
 run/main_scene="res://scenes/lobby/Lobby.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 boot_splash/image="res://images/splashscreen.png"
-boot_splash/minimum_display_time=5000
+boot_splash/minimum_display_time=500
 
 [autoload]
 
 LobbyManager="*res://scripts/managers/LobbyManager.gd"
-CommunicationManager="*res://scripts/managers/CommunicationManager.gd.gd"
+CommunicationManager="*res://scripts/managers/CommunicationManager.gd"
 WebSocketMessage="*res://scripts/networking/websocket/WebSocketMessage.gd"
 WebSocketConnection="*res://scripts/networking/websocket/WebSocketConnection.gd"
 WebRTCConnection="*res://scripts/networking/webrtc/WebRTCConnection.gd"
