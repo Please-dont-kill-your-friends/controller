@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8kccb7ro4ljy"]
+
+[ext_resource type="Script" path="res://scripts/ui/ranking/UIRanking.gd" id="1_ex2o2"]
+[ext_resource type="PackedScene" uid="uid://8pdy18m151dd" path="res://scenes/general/Background.tscn" id="2_0xqs7"]
+[ext_resource type="FontFile" uid="uid://chtroxuj05iln" path="res://fonts/MoreSugar.otf" id="3_vsry3"]
+
+[node name="Ranking" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ex2o2")
+
+[node name="Background" parent="." instance=ExtResource("2_0xqs7")]
+layout_mode = 0
+anchors_preset = 0
+
+[node name="PlaceLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -445.5
+offset_top = -68.0
+offset_right = 445.5
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_vsry3")
+theme_override_font_sizes/font_size = 110
+text = "You are in X. Place"
+
+[node name="PointsLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -392.5
+offset_top = 43.0
+offset_right = 392.5
+offset_bottom = 117.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_vsry3")
+theme_override_font_sizes/font_size = 60
+text = "You have X out of 20 Points"

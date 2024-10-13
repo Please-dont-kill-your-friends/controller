@@ -27,7 +27,7 @@ func server_send_bg_color(bg_color: Color):
 	pass
 
 @rpc("authority", "call_remote", "reliable")
-func sever_send_scene_change():
+func sever_set_controller_joystick():
 	get_tree().change_scene_to_file("res://scenes/controller/JoystickController.tscn")
 	pass
 
@@ -39,4 +39,11 @@ func server_disable_button_a(disabled: bool):
 @rpc("authority", "call_remote", "reliable")
 func server_disable_button_b(disabled: bool):
 	disable_button_b.emit(disabled)
+	pass
+
+@rpc("authority", "call_remote", "reliable")
+func server_send_ranking(rank: int, points: int):
+	ScoreManager.points = points
+	ScoreManager.rank = rank
+	get_tree().change_scene_to_file("res://scenes/ranking/Ranking.tscn")
 	pass
